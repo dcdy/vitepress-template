@@ -1,0 +1,16 @@
+node_modules
+dist
+out
+.DS_Store
+*.log*
+*.tgz
+.history
+cache
+.idea
+.temp
+.vite_opt_cache
+.vscode
+temp
+examples-temp
+pnpm-global
+*.timestamp-*.mjs
