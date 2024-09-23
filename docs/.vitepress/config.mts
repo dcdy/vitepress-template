@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+	base: '/vitepress-template/',
 	title: 'VitePress基础框架',
 	description: 'VitePress基础框架的站点描述',
 	themeConfig: {
@@ -23,8 +24,6 @@ export default defineConfig({
 			},
 		],
 
-		socialLinks: [
-			{ icon: 'github', link: 'https://github.com/vuejs/vitepress' },
-		],
+		socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
 	},
 });
