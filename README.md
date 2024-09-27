@@ -1,6 +1,12 @@
-# 项目目录
+# VitePress 基础模板
 
-```
+## 🚩 介绍
+
+基于[VitePress](https://vitepress.dev/zh/)的基础框架，快速搭建一个简单的站点（附带详细教程`/docs/directions.md`）。
+
+## 📃 项目目录
+
+```sh
 vitepress-template
 ├─ 📁docs
 │  ├─ 📁.vitepress
@@ -14,21 +20,23 @@ vitepress-template
 └─ 📄README.md
 ```
 
-# 初始化
+## ✨ 特性
 
-## 安装
+- 基础配置
+- 部署到github pages
 
-官网链接：https://vitejs.cn/vitepress/guide/getting-started
-
-::: code-group
+## 🔑 安装
 
 ```sh
-$ npm add -D vitepress
-$ pnpm add -D vitepress
-$ yarn add -D vitepress
-$ yarn add -D vitepress vue
-$ bun add -D vitepress
+# 安装依赖
+pnpm install
+
+# 启动
+pnpm dev
+
+# 打包
+pnpm build
+
+# 预览打包
+pnpm preview
 ```
-
-:::
-
