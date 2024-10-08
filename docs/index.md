@@ -6,6 +6,9 @@ hero:
     name: VitePress基础框架
     text: VitePress基础框架的站点描述
     tagline: VitePress基础框架的宣传词
+    image:
+        src: /logo/vitepress-logo-large.webp
+        alt: VitePress基础框架LOGO
     actions:
         - theme: brand # 选中状态
           text: 教程
