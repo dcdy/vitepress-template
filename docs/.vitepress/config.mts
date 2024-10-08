@@ -1,6 +1,6 @@
 /** @format */
 
-import { defineConfig } from 'vitepress';
+import { defineConfig, type DefaultTheme } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -40,10 +40,7 @@ export default defineConfig({
 		logo: { src: '/logo/vitepress-logo-mini.svg', width: 24, height: 24 }, // 左侧导航栏图标也可直接'/logo/vitepress-logo-mini.svg'
 		siteTitle: 'VitePress基础框架', // 左侧导航栏标题
 		// 导航菜单
-		nav: [
-			{ text: '首页', link: '/' },
-			{ text: '配置', link: '/directions' },
-		],
+		nav: nav(),
 		// 侧边栏菜单
 		sidebar: [
 			{
@@ -99,3 +96,37 @@ export default defineConfig({
 		externalLinkIcon: true, // 默认false，是否在 markdown 中的外部链接旁显示外部链接图标。
 	},
 });
+
+// 导航菜单
+function nav(): DefaultTheme.NavItem[] {
+	return [
+		{
+			text: '首页',
+			link: '/',
+			// activeMatch: '/',
+		},
+		{
+			text: '配置',
+			link: '/directions',
+			activeMatch: '/directions',
+		},
+		{
+			text: '下拉导航',
+			items: [
+				{
+					text: '下拉导航表题', // 该部分的标题，也可以省略标题
+					items: [
+						{
+							text: '子项A',
+							link: 'https://github.com/dcdy/vitepress-template/edit/main/docs/.vitepress/config.mts',
+						},
+						{
+							text: '子项B',
+							link: 'https://gitee.com/xia_mei_ting/vitepress-template/blob/main/docs/.vitepress/config.mts',
+						},
+					],
+				},
+			],
+		},
+	];
+}
