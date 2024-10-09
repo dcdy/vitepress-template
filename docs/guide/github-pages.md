@@ -1,49 +1,3 @@
-# 项目目录
-
-```
-vitepress-template
-├─ 📁docs
-│  ├─ 📁.vitepress
-│  │  └─ 📄config.mts
-│  ├─ 📄api-examples.md
-│  ├─ 📄index.md
-│  └─ 📄markdown-examples.md
-├─ 📄.gitignore
-├─ 📄package.json
-├─ 📄pnpm-lock.yaml
-└─ 📄README.md
-```
-
-# 初始化
-
-## 安装
-
-官网链接：https://vitejs.cn/vitepress/guide/getting-started
-
-::: code-group
-
-```sh [npm]
-$ npm add -D vitepress
-```
-
-```sh [pnpm]
-$ pnpm add -D vitepress
-```
-
-```sh [yarn]
-$ yarn add -D vitepress
-```
-
-```sh [yarn (pnp)]
-$ yarn add -D vitepress vue
-```
-
-```sh [bun]
-$ bun add -D vitepress
-```
-
-:::
-
 # 部署到 GitHub Pages
 
 ::: info 参考链接
@@ -169,3 +123,5 @@ export default defineConfig({
 ![image-20240924112324556](https://cdn.jsdelivr.net/gh/dcdy/image/img/image-20240924112324556.png)
 
 ## 4.pnpm build 打包，打包后将更改推送到 main 分支并等待 GitHub Action 工作流完成。
+
+## 5.部署完成后，有代码更新时 push 推送到 main 分支，会自动触发 GitHub Action 工作流更新线上样式。

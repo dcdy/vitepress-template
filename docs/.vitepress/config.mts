@@ -42,15 +42,10 @@ export default defineConfig({
 		// 导航菜单
 		nav: nav(),
 		// 侧边栏菜单
-		sidebar: [
-			{
-				text: '配置',
-				items: [
-					{ text: '教程', link: '/directions' },
-					{ text: 'Markdown例子', link: '/markdown-examples' },
-				],
-			},
-		],
+		sidebar: {
+			'/guide': { base: '/guide', items: sidebarDirections() },
+			'/examples': { base: '/examples', items: sidebarExamples() },
+		},
 		outline: 'deep', // 在大纲中显示的标题级别
 		outlineTitle: '页面导航', // 大纲的标题
 		// 提供编辑页面的链接
@@ -75,7 +70,7 @@ export default defineConfig({
 			// 有 sidebar 时不显示
 			message: '基于MIT许可发布',
 			copyright: `版权所有 © ${
-				new Date().getFullYear() == 2023 ? 2024 : 2024 + '-' + new Date().getFullYear()
+				new Date().getFullYear() == 2024 ? 2024 : 2024 + '-' + new Date().getFullYear()
 			} dcdyxmt@163.com`,
 		},
 		socialLinks: [
@@ -101,14 +96,14 @@ export default defineConfig({
 function nav(): DefaultTheme.NavItem[] {
 	return [
 		{
-			text: '首页',
-			link: '/',
-			// activeMatch: '/',
+			text: '教程',
+			link: '/guide/install',
+			activeMatch: '/guide',
 		},
 		{
-			text: '配置',
-			link: '/directions',
-			activeMatch: '/directions',
+			text: '示例',
+			link: '/examples/markdown',
+			activeMatch: '/examples',
 		},
 		{
 			text: '下拉导航',
@@ -125,6 +120,59 @@ function nav(): DefaultTheme.NavItem[] {
 							link: 'https://gitee.com/xia_mei_ting/vitepress-template/blob/main/docs/.vitepress/config.mts',
 						},
 					],
+				},
+			],
+		},
+	];
+}
+
+// 教程侧边栏（多侧边栏,可折叠的侧边栏组）
+function sidebarDirections(): DefaultTheme.SidebarItem[] {
+	return [
+		{
+			text: '简介',
+			collapsed: false, // 默认不折叠。true：自动折叠；不添加collapsed属性不显示下拉图标
+			items: [
+				{
+					text: '安装',
+					link: '/install',
+				},
+			],
+		},
+		{
+			text: '部署',
+			collapsed: false,
+			items: [
+				{
+					text: 'Github Pages',
+					link: '/github-pages',
+				},
+			],
+		},
+	];
+}
+// 示例侧边栏（普通单侧边栏）
+function sidebarExamples(): DefaultTheme.SidebarItem[] {
+	return [
+		{
+			text: '示例',
+			items: [
+				{
+					text: 'Markdown',
+					items: [
+						{
+							text: '基础示例',
+							link: '/markdown',
+						},
+						{
+							text: '扩展示例',
+							link: '/markdown-expand',
+						},
+					],
+				},
+				{
+					text: 'API',
+					link: '/api',
 				},
 			],
 		},

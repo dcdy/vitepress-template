@@ -11,11 +11,11 @@ hero:
         alt: VitePress基础框架LOGO
     actions:
         - theme: brand # 选中状态
-          text: 教程
-          link: /directions
+          text: 快速开始
+          link: /guide/install
         - theme: alt # 未选中状态
-          text: Markdown示例
-          link: /markdown-examples
+          text: 示例
+          link: /examples/markdown
 
 features:
     - title: Feature A
